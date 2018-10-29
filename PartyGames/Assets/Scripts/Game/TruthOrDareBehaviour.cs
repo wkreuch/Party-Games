@@ -27,6 +27,11 @@ public class TruthOrDareBehaviour : MonoBehaviour {
 
     //Guarda as frases depois de buscar o arquivo correto
     private string[] lines;
+    public string linesText;
+    public string[] alreadyUsed = new string[200];
+    public int indexUsed;
+    public int indexChecker;
+    public bool randomizeAgain;
 
     #endregion
 
@@ -55,6 +60,7 @@ public class TruthOrDareBehaviour : MonoBehaviour {
 
         //Busca a Difficuldade Selecionada
         gameDifficulty = SceneController.GetComponent<DataSave>().Difficulty;
+        indexUsed = -1;
     }
 
     //Procura o arquivo correto
@@ -123,7 +129,34 @@ public class TruthOrDareBehaviour : MonoBehaviour {
     //Muda o Texto a ser exibido
     public void ChangeTextDisplay()
     {
-        Text_Box.GetComponent<UnityEngine.UI.Text>().text = lines[Random.Range(0, lines.Length)];
+        randomizeAgain = true;
+        if (randomizeAgain == true)
+        {
+            linesText = lines[Random.Range(0, lines.Length)];
+
+            indexChecker = System.Array.IndexOf(alreadyUsed, linesText);
+            if (indexChecker < 0)
+            {
+                Text_Box.GetComponent<UnityEngine.UI.Text>().text = linesText;
+                if (indexUsed >= 8)
+                {
+                    indexUsed = -1;
+                    indexUsed++;
+                    alreadyUsed[indexUsed] = linesText;
+                }
+                else
+                {
+                    indexUsed++;
+                    alreadyUsed[indexUsed] = linesText;
+                }
+                randomizeAgain = false;
+            }
+            else
+            {
+                Randomizer();
+            }
+        }
+
     }
     //Randomizer responsavel por ramdomizar o nivel de dificuldade do desafio
     public void Randomizer()
