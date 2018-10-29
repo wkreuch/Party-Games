@@ -222,8 +222,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1027233967}
-        m_MethodName: IsBackClicked
+      - m_Target: {fileID: 915667731}
+        m_MethodName: BackClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -440,8 +440,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1027233967}
-        m_MethodName: IsBackClicked
+      - m_Target: {fileID: 915667731}
+        m_MethodName: BackClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -528,8 +528,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1027233967}
-        m_MethodName: IsRandom
+      - m_Target: {fileID: 915667731}
+        m_MethodName: RandomClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -585,7 +585,6 @@ GameObject:
   - component: {fileID: 440383475}
   - component: {fileID: 440383477}
   - component: {fileID: 440383476}
-  - component: {fileID: 440383478}
   m_Layer: 5
   m_Name: IMG_Dare
   m_TagString: Untagged
@@ -645,23 +644,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 440383474}
   m_CullTransparentMesh: 0
---- !u!114 &440383478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 440383474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e987245f747ec4342be2afba3abfd7ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BTN_Switch: {fileID: 1027233963}
-  file: Desafio
-  dificuldade: 
-  fileFinalName: 
-  lines: []
-  random: 0
 --- !u!1 &915667723
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +658,7 @@ GameObject:
   - component: {fileID: 915667728}
   - component: {fileID: 915667730}
   - component: {fileID: 915667729}
+  - component: {fileID: 915667731}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -820,6 +803,17 @@ MonoBehaviour:
   adsMax: 16
   Fixed: 0
   adsFixed: 0
+--- !u!114 &915667731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 915667723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e987245f747ec4342be2afba3abfd7ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1027233963
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +824,6 @@ GameObject:
   - component: {fileID: 1027233964}
   - component: {fileID: 1027233966}
   - component: {fileID: 1027233965}
-  - component: {fileID: 1027233967}
   m_Layer: 5
   m_Name: IMG_Truth
   m_TagString: Untagged
@@ -890,23 +883,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1027233963}
   m_CullTransparentMesh: 0
---- !u!114 &1027233967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1027233963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e987245f747ec4342be2afba3abfd7ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BTN_Switch: {fileID: 440383474}
-  file: Verdade
-  dificuldade: 
-  fileFinalName: 
-  lines: []
-  random: 0
 --- !u!1 &1120048800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,8 +1020,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 440383478}
-        m_MethodName: IsDareClicked
+      - m_Target: {fileID: 915667731}
+        m_MethodName: DareClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1352,8 +1328,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1027233967}
-        m_MethodName: IsBackClicked
+      - m_Target: {fileID: 915667731}
+        m_MethodName: BackClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1468,8 +1444,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1027233967}
-        m_MethodName: IsTruthClicked
+      - m_Target: {fileID: 915667731}
+        m_MethodName: TruthClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

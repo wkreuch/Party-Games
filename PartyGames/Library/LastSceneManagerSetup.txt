@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scene/Games/KingsCups.unity
+- path: Assets/_Scene/Begin.unity
   isLoaded: 1
   isActive: 1
