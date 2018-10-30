@@ -28,6 +28,11 @@ public class TruthOrDareBehaviour : MonoBehaviour {
     //Guarda as frases depois de buscar o arquivo correto
     private string[] lines;
     public string linesText;
+
+    #endregion
+
+    #region Variaves usada no codigo para não repetir os desafios
+
     public string[] alreadyUsed = new string[200];
     public int indexUsed;
     public int indexChecker;
@@ -124,10 +129,10 @@ public class TruthOrDareBehaviour : MonoBehaviour {
         //Ativa animação de abrir
         CanvasFinder.GetComponent<Animator>().SetInteger("Animate", 1);
         //Chama o metodo responsavel por mudar o texto mostrado no cartão
-        ChangeTextDisplay();
+        RandomizerTextToDisplay();
     }
-    //Muda o Texto a ser exibido
-    public void ChangeTextDisplay()
+    //Randomizer Text responsavel por ramdomizar o texto que vai ser mostrado no display
+    public void RandomizerTextToDisplay()
     {
         randomizeAgain = true;
         if (randomizeAgain == true)
@@ -138,7 +143,7 @@ public class TruthOrDareBehaviour : MonoBehaviour {
             if (indexChecker < 0)
             {
                 Text_Box.GetComponent<UnityEngine.UI.Text>().text = linesText;
-                if (indexUsed >= 8)
+                if (indexUsed >= 198)
                 {
                     indexUsed = -1;
                     indexUsed++;
@@ -164,9 +169,12 @@ public class TruthOrDareBehaviour : MonoBehaviour {
         //Switch usado para controlar o provabilidade do nivel do desafio a ser selecionado
         switch (gameDifficulty)
         {
+            #region Facil
             case "Easy":
                 fetchDifficulty = "Easy";
                 break;
+            #endregion
+            #region Normal
             case "Normal":
                 randomDifficulty = Random.Range(0, 101);
                 if (randomDifficulty >= 0 && randomDifficulty <= 50)
@@ -178,6 +186,8 @@ public class TruthOrDareBehaviour : MonoBehaviour {
                     fetchDifficulty = "Normal";
                 }
                 break;
+            #endregion
+            #region Dificil
             case "Hard":
                 randomDifficulty = Random.Range(0, 101);
                 if (randomDifficulty >= 0 && randomDifficulty <= 50)
@@ -193,6 +203,8 @@ public class TruthOrDareBehaviour : MonoBehaviour {
                     fetchDifficulty = "Hard";
                 }
                 break;
+            #endregion
+            #region Extremo
             case "Extreme":
                 randomDifficulty = Random.Range(0, 101);
                 if (randomDifficulty >= 0 && randomDifficulty <= 50)
@@ -212,6 +224,7 @@ public class TruthOrDareBehaviour : MonoBehaviour {
                     fetchDifficulty = "Extreme";
                 }
                 break;
+                #endregion
         }
         FetchFile();
     }
